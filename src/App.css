@@ -173,8 +173,15 @@ h5 {
 /* Navbar */
 nav {
   /* background-color: transparent !important; */
-  transition: 0.5s ease !important;
-  /* padding:  1.3rem 0 !important; */
+  transition: 0.3s ease-in !important;
+  padding:  1.3rem 0 !important;
+  background: linear-gradient(#0000003d, #00000000);
+
+}
+
+.nav-scrolled {
+  padding:  1rem 0 !important;
+  background: #0000009c;
 }
 
 .active1 {
@@ -221,12 +228,7 @@ nav .btn:hover {
   z-index: 997;
   padding: 25px 0;
 }
-#header.header-scrolled {
-  padding: 20px 0;
-  top: 0;
-  background: #000000f2;
-  border-bottom: 1px solid #37332a;
-}
+
 
 /* Navbar */
 

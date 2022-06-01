@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react"; 
 import { NavLink, Link } from "react-router-dom";
 import ScrollTopTopButton from "./ScrollToTopButton";
 // import logo from "./logo.jpeg";
 const Navbar = () => {
 
+  const [isVisible, setIsVisible] = useState(false); 
+ 
+  useEffect(() => { 
+    // Button is displayed after scrolling for 500 pixels 
+    const toggleVisibility = () => { 
+      if (window.pageYOffset > 200) { 
+        setIsVisible(true); 
+      } else { 
+        setIsVisible(false); 
+      } 
+    }; 
+    window.addEventListener("scroll", toggleVisibility); 
+    return () => window.removeEventListener("scroll", toggleVisibility); 
+  }, []); 
   
   return (
     <>
 
-<nav class="navbar navbar-expand-md navbar-light shadow-none fixed-top" id="navbar">
+<nav class={`navbar navbar-expand-md navbar-light shadow-none fixed-top ${isVisible ? 'nav-scrolled' : ''}`}>
   <div class="container-fluid">
     <a class="navbar-brand light-text" href="#">Trynewthis.com</a>
     <button
